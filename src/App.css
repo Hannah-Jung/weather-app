@@ -1,0 +1,208 @@
+body {
+    background: url(https://wallpapercave.com/wp/wp7991751.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.weather-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.unit-toggle-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.unit-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.unit-toggle-btn.top-right {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    border: 2px solid rgba(240, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: rgba(240, 255, 255, 0.25);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.unit-toggle-btn.top-right:hover {
+    background-color: rgba(240, 255, 255, 0.5);
+    color: white;
+    transform: scale(1.05);
+}
+
+.button-container button, .button-container button:focus, .button-container button.active {
+    transition: background 0.2s ease;
+    background: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 1.15rem;
+    outline: none;
+    box-shadow: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container button:hover {
+    background-color: rgba(240, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.city-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 25px
+}
+
+.city-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.temp-container {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.temp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.temperature {
+    font-size: 3rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.weather-icon {
+    width: 200px;
+    height: 200px;
+    animation: pulse 2s infinite alternate;
+    filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.5));
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.weather-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.temp-range {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.temp-range span.separator {
+    margin-left: 8px;
+}
+
+.humidity-section {
+    text-align: center;
+}
+
+.humidity-bar {
+    width: 80%;
+    height: 10px;
+    margin: 6px auto 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.humidity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a7ddf9, #25b0fb);
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+.location-icon {
+    margin-right: 8px;
+    color: #fff
+}
+
+.dropdown-menu, .dropdown-item {
+    text-shadow: none !important;
+}
+
+.weather-status {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.humidity-label {
+    font-size: 1.25rem;
+}
+
+.current-time {
+    margin-bottom: 10px;
+}
+
+.location-icon, .arrow-up, .arrow-down {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
