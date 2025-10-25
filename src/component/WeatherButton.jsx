@@ -1,27 +1,31 @@
 import React from 'react'
-import { Button, Dropdown, ButtonGroup, DropdownItem } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-const WeatherButton = ({cities, cityChange, currentLocation}) => {
+const WeatherButton = ({cities, cityChange, currentLocation, selectedCity }) => {
   return (
     <div className='button-container'>
-        <Button variant="light" onClick={currentLocation}>Current Location</Button>
+      <div className='location-section'>      
+        <Button
+          variant="outline-light"
+          onClick={currentLocation}
+          className={`city-button ${selectedCity === "current" ? "active" : ""}`}
+        >
+          Current Location
+        </Button>
+      </div>        
 
-        <Dropdown>
-          <Dropdown.Toggle  variant="light" id="dropdown-basic">Select City
-          </Dropdown.Toggle>
-      
-        <Dropdown.Menu>
+        <div className='city-buttons'>
           {cities.map((city, idx) => (
-            <Dropdown.Item
-          key={idx} 
-          variant="light" 
+        <Button
+          key={idx}
+          variant="outline-light"
           onClick={() => cityChange(city)}
+          className={`city-button ${city === selectedCity ? "active" : ""}`}
         >
           {city}
-        </Dropdown.Item>
+        </Button>
       ))}
-      </Dropdown.Menu>
-      </Dropdown>
+        </div>          
     </div>
     )
 }

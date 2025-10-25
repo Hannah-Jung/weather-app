@@ -6,12 +6,11 @@ const WeatherTime = ({ timezone }) => {
 
   useEffect(() => {
     if (!timezone) return;
-
-    const interval = setInterval(() => {
+    const updateTime = () => {
       const now = new Date();
       const cityTime = new Date(now.getTime() + timezone * 1000);
 
-      const optionsDate = { weekday: 'short', month: 'long', day: 'numeric' };
+      const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
       const formattedDate = cityTime.toLocaleDateString('en-US', optionsDate);
       setCurrentDate(formattedDate);
 
@@ -22,7 +21,10 @@ const WeatherTime = ({ timezone }) => {
       hours = hours ? hours : 12;
       const formattedTime = `${hours}:${minutes.toString().padStart(2,'0')} ${ampm}`;
       setCurrentTime(formattedTime);
-    }, 1000);
+    };
+
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
 
     return () => clearInterval(interval);
   }, [timezone]);

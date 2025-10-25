@@ -33,7 +33,7 @@ body {
     border: none;
     color: white;
     padding: 5px 10px;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
     font-weight: 500;
     transition: background 0.2s ease;
@@ -49,7 +49,7 @@ body {
     right: 15px;
     padding: 5px 10px;
     border: 2px solid rgba(240, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 15px;
     background-color: rgba(240, 255, 255, 0.25);
     cursor: pointer;
     transition: 0.2s;
@@ -62,7 +62,26 @@ body {
     transform: scale(1.05);
 }
 
-.button-container button, .button-container button:focus, .button-container button.active {
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.location-section {
+    margin-bottom: 5px;
+}
+
+.city-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-container button {
     transition: background 0.2s ease;
     background: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.8);
@@ -71,13 +90,16 @@ body {
     outline: none;
     box-shadow: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
 }
 
-.button-container button:hover {
-    background-color: rgba(240, 255, 255, 0.5);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    color: #fff;
+.button-container button.hover,
+.button-container button:active {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
 }
 
 .city-header {
@@ -87,7 +109,7 @@ body {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 10px;
-    margin-top: 25px
+    margin-top: 20px
 }
 
 .city-name {
@@ -97,7 +119,7 @@ body {
 }
 
 .temp-container {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     gap: 10px
@@ -111,19 +133,12 @@ body {
 }
 
 .temperature {
-    font-size: 3rem;
-}
-
-.button-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    font-size: 2.5rem;
 }
 
 .weather-icon {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
     animation: pulse 2s infinite alternate;
     filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.5));
 
@@ -152,7 +167,7 @@ body {
 
 .temp-range {
     font-size: 1.25rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .temp-range span.separator {
@@ -170,7 +185,7 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -184,10 +199,6 @@ body {
 .location-icon {
     margin-right: 8px;
     color: #fff
-}
-
-.dropdown-menu, .dropdown-item {
-    text-shadow: none !important;
 }
 
 .weather-status {
@@ -205,4 +216,16 @@ body {
 
 .location-icon, .arrow-up, .arrow-down {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.city-button:hover, .city-button:active {
+    transform: scale(1.05);
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background-color: rgba(240, 255, 255, 0.5);
+}
+
+.loading-spinner-msg {
+    color: white;
+    font-weight: 500;
 }
